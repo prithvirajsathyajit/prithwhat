@@ -13,44 +13,35 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #1c1c1c, #333);
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
             overflow: hidden;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             text-align: center;
-            animation: glow 1.5s infinite alternate;
-            color: #00ffcc;
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 25px #00ffcc, 0 0 30px #00ffcc, 0 0 35px #00ffcc;
-            }
-            100% {
-                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
-            }
+            color: #ecf0f1;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .bubble {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            bottom: -150px;
-            animation: rise 7s infinite ease-in-out;
+            bottom: -100px;
+            animation: rise 8s infinite ease-in-out;
         }
 
         @keyframes rise {
             0% {
-                transform: translateY(0) scale(0.5);
-                opacity: 1;
+                transform: translateY(0) scale(0.8);
+                opacity: 0.8;
             }
             100% {
-                transform: translateY(-200vh) scale(1);
+                transform: translateY(-150vh) scale(1.2);
                 opacity: 0;
             }
         }
@@ -62,13 +53,13 @@
     <script>
         // Function to create bubbles
         function createBubbles() {
-            const bubbleCount = 10;
+            const bubbleCount = 20;
             for (let i = 0; i < bubbleCount; i++) {
                 let bubble = document.createElement('div');
                 bubble.classList.add('bubble');
                 bubble.style.left = Math.random() * 100 + 'vw';
-                bubble.style.animationDelay = Math.random() * 5 + 's';
-                bubble.style.animationDuration = 5 + Math.random() * 5 + 's';
+                bubble.style.animationDelay = Math.random() * 4 + 's';
+                bubble.style.animationDuration = 6 + Math.random() * 4 + 's';
                 document.body.appendChild(bubble);
             }
         }
